@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/movieDetailedName"
+            android:layout_width="287dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Fast And Furios 9 "
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/favButton"
+            app:layout_constraintBottom_toTopOf="@id/detailedMoviePoster"
+            android:layout_marginLeft="60dp" />
+
+        <ImageView
+            android:id="@+id/favButton"
+            android:layout_width="44dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="7dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/movieDetailedName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toEndOf="@+id/movieDetailedName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_baseline_favorite_border_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/detailedMoviePoster"
+            android:transitionName="image"
+            android:layout_width="350dp"
+            android:layout_height="277dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movieDetailedName"
+            app:layout_constraintBottom_toTopOf="@id/overView"
+            app:riv_corner_radius="70dp"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:id="@+id/movieTrailerButton"
+            android:layout_width="92dp"
+            android:layout_height="71dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/detailedMoviePoster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/detailedMoviePoster"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:srcCompat="@drawable/ic_baseline_play_arrow_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/overView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="OverView"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/detailedMoviePoster"
+            app:layout_constraintStart_toStartOf="@id/detailedMoviePoster"
+            app:layout_constraintEnd_toEndOf="@id/overView"
+            app:layout_constraintBottom_toTopOf="@id/detailedMovieOverView"
+            >
+
+        </TextView>
+
+            <TextView
+                android:id="@+id/detailedMovieOverView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@id/overView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/overView"
+                app:layout_constraintBottom_toTopOf="@id/Similar_Movies"
+               >
+
+            </TextView>
+
+        <TextView
+            android:id="@+id/Similar_Movies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Similar Movies"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/overView"
+            app:layout_constraintEnd_toEndOf="@id/overView"
+            app:layout_constraintTop_toBottomOf="@id/detailedMovieOverView"
+            app:layout_constraintBottom_toTopOf="@id/recycler_similarMovies"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_similarMovies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/Similar_Movies"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/Similar_Movies"
+             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
